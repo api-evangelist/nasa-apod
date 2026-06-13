@@ -1,0 +1,123 @@
+{
+  "vocabulary": {
+    "title": "NASA APOD API Vocabulary",
+    "description": "Controlled vocabulary and term definitions for the NASA Astronomy Picture of the Day API",
+    "version": "1.0.0",
+    "source": "https://github.com/nasa/apod-api",
+    "terms": [
+      {
+        "term": "apod",
+        "label": "Astronomy Picture of the Day",
+        "definition": "A daily feature on the NASA website presenting a new astronomical image or photograph, along with a brief explanation written by a professional astronomer. Published since June 16, 1995.",
+        "url": "https://apod.nasa.gov/apod/astropix.html"
+      },
+      {
+        "term": "date",
+        "label": "APOD Date",
+        "definition": "A calendar date in YYYY-MM-DD format referencing a specific APOD entry. Valid dates range from 1995-06-16 (the first APOD publication date) to the current date. Future dates are not available.",
+        "format": "YYYY-MM-DD",
+        "minimum": "1995-06-16"
+      },
+      {
+        "term": "media_type",
+        "label": "Media Type",
+        "definition": "Indicates whether the APOD content for a given date is an image or a video. Possible values are 'image' and 'video'.",
+        "values": ["image", "video"]
+      },
+      {
+        "term": "hdurl",
+        "label": "High-Definition URL",
+        "definition": "The URL pointing to the high-resolution version of the APOD image. Only present for image entries and only when a high-resolution version exists at the APOD source. The 'hd' query parameter is ignored; HD URLs are always returned when available.",
+        "mediaType": "image"
+      },
+      {
+        "term": "url",
+        "label": "Image or Video URL",
+        "definition": "The standard-resolution URL for the APOD image, or the URL for the APOD video (e.g., a YouTube embed URL) for video entries.",
+        "required": true
+      },
+      {
+        "term": "explanation",
+        "label": "Explanation",
+        "definition": "A written explanation of the APOD image or video authored by a professional astronomer. Describes the astronomical subject, its significance, and relevant scientific context.",
+        "required": true
+      },
+      {
+        "term": "title",
+        "label": "Title",
+        "definition": "The title given to the Astronomy Picture of the Day entry by its author.",
+        "required": true
+      },
+      {
+        "term": "copyright",
+        "label": "Copyright",
+        "definition": "The name of the copyright holder for the APOD image or video. Absent when the content is NASA-owned or otherwise in the public domain. When present, re-displaying the imagery requires attribution.",
+        "required": false
+      },
+      {
+        "term": "concept_tags",
+        "label": "Concept Tags",
+        "definition": "Boolean flag controlling whether keyword concepts are extracted and returned from the APOD explanation text. Concepts are derived from common search tags associated with the description, useful for auto-generated hashtags or content discovery. Note: This feature may be disabled in the current service deployment.",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "term": "concepts",
+        "label": "Concepts",
+        "definition": "An ordered dictionary mapping integer index strings to concept keywords derived from the APOD explanation. Only returned when concept_tags=True. Keys are string representations of integers (e.g., '0', '1', '2').",
+        "requires": "concept_tags=True"
+      },
+      {
+        "term": "thumbs",
+        "label": "Thumbnails",
+        "definition": "Boolean flag controlling whether a thumbnail image URL is returned for video APOD entries. When True and the entry is a video, thumbnail_url is included in the response. Ignored for image entries.",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "term": "thumbnail_url",
+        "label": "Thumbnail URL",
+        "definition": "The URL of a thumbnail image for a video APOD entry. Only included in the response when thumbs=True and media_type='video'.",
+        "requires": "thumbs=True AND media_type=video"
+      },
+      {
+        "term": "count",
+        "label": "Random Count",
+        "definition": "A positive integer (1-100) specifying the number of randomly selected APOD entries to return. When used, the response is a JSON array of randomly chosen entries. Mutually exclusive with date, start_date, and end_date parameters.",
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 100
+      },
+      {
+        "term": "start_date",
+        "label": "Start Date",
+        "definition": "A date string in YYYY-MM-DD format marking the beginning of a date range query. All APOD entries from start_date through end_date (or today if end_date is omitted) are returned as a JSON array. Cannot be combined with date or count.",
+        "format": "YYYY-MM-DD"
+      },
+      {
+        "term": "end_date",
+        "label": "End Date",
+        "definition": "A date string in YYYY-MM-DD format marking the end of a date range query. Used with start_date. Defaults to the current date if start_date is specified without end_date. Cannot be combined with date or count.",
+        "format": "YYYY-MM-DD"
+      },
+      {
+        "term": "api_key",
+        "label": "API Key",
+        "definition": "A NASA API key used to authenticate requests and track usage. DEMO_KEY is available for testing with reduced rate limits (30 requests/hour, 50 requests/day per IP). Register at https://api.nasa.gov/#signUp for a full key.",
+        "default": "DEMO_KEY"
+      },
+      {
+        "term": "service_version",
+        "label": "Service Version",
+        "definition": "The version of the APOD API service that fulfilled the request. Currently 'v1'. Included in every response.",
+        "currentValue": "v1"
+      },
+      {
+        "term": "hd",
+        "label": "High-Definition Flag (Legacy)",
+        "definition": "A legacy boolean parameter originally intended to control whether high-resolution image URLs are returned. This parameter is now always ignored by the service; HD URLs are returned whenever they exist regardless of this flag.",
+        "deprecated": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "apod": "https://api.nasa.gov/planetary/apod#",
+    "nasa": "https://api.nasa.gov/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "ApodEntry": {
+      "@id": "apod:ApodEntry",
+      "@type": "@id",
+      "rdfs:label": "Astronomy Picture of the Day Entry",
+      "rdfs:comment": "A single entry from the NASA Astronomy Picture of the Day API"
+    },
+
+    "date": {
+      "@id": "schema:datePublished",
+      "@type": "xsd:date",
+      "rdfs:label": "APOD Date",
+      "rdfs:comment": "The date of the Astronomy Picture of the Day entry in YYYY-MM-DD format"
+    },
+
+    "title": {
+      "@id": "schema:name",
+      "@type": "xsd:string",
+      "rdfs:label": "Title",
+      "rdfs:comment": "The title of the astronomy image or video"
+    },
+
+    "explanation": {
+      "@id": "schema:description",
+      "@type": "xsd:string",
+      "rdfs:label": "Explanation",
+      "rdfs:comment": "Detailed explanation of the astronomy picture or video written by a NASA scientist"
+    },
+
+    "url": {
+      "@id": "schema:contentUrl",
+      "@type": "@id",
+      "rdfs:label": "Image or Video URL",
+      "rdfs:comment": "The standard-resolution URL of the APOD image or video"
+    },
+
+    "hdurl": {
+      "@id": "apod:hdUrl",
+      "@type": "@id",
+      "rdfs:label": "High-Definition URL",
+      "rdfs:comment": "The URL for the high-resolution version of the APOD image"
+    },
+
+    "media_type": {
+      "@id": "schema:encodingFormat",
+      "@type": "xsd:string",
+      "rdfs:label": "Media Type",
+      "rdfs:comment": "The type of media: 'image' or 'video'"
+    },
+
+    "copyright": {
+      "@id": "schema:copyrightHolder",
+      "@type": "xsd:string",
+      "rdfs:label": "Copyright",
+      "rdfs:comment": "The name of the copyright holder. Absent when content is NASA/public domain."
+    },
+
+    "concepts": {
+      "@id": "schema:keywords",
+      "rdfs:label": "Concepts",
+      "rdfs:comment": "Ordered dictionary of concept keywords derived from the explanation text"
+    },
+
+    "concept_tags": {
+      "@id": "apod:conceptTags",
+      "@type": "xsd:boolean",
+      "rdfs:label": "Concept Tags Flag",
+      "rdfs:comment": "Boolean reflection of the concept_tags request parameter"
+    },
+
+    "thumbnail_url": {
+      "@id": "schema:thumbnailUrl",
+      "@type": "@id",
+      "rdfs:label": "Thumbnail URL",
+      "rdfs:comment": "URL of the video thumbnail image. Only present for video entries when thumbs=True."
+    },
+
+    "service_version": {
+      "@id": "apod:serviceVersion",
+      "@type": "xsd:string",
+      "rdfs:label": "Service Version",
+      "rdfs:comment": "The version of the APOD API service that fulfilled the request"
+    },
+
+    "resource": {
+      "@id": "apod:resource",
+      "rdfs:label": "Resource",
+      "rdfs:comment": "Dictionary describing the image_set or planet the response illustrates"
+    }
+  },
+
+  "@graph": [
+    {
+      "@type": "schema:WebAPI",
+      "@id": "https://api.nasa.gov/planetary/apod",
+      "schema:name": "NASA Astronomy Picture of the Day API",
+      "schema:description": "NASA APOD REST API providing daily astronomy images and explanations curated by NASA scientists. Available from 1995-06-16 onward.",
+      "schema:url": "https://api.nasa.gov/",
+      "schema:documentation": "https://github.com/nasa/apod-api",
+      "schema:provider": {
+        "@type": "schema:Organization",
+        "@id": "https://www.nasa.gov/",
+        "schema:name": "National Aeronautics and Space Administration (NASA)",
+        "schema:url": "https://www.nasa.gov/"
+      },
+      "schema:license": "https://www.apache.org/licenses/LICENSE-2.0.html",
+      "schema:keywords": [
+        "astronomy",
+        "space",
+        "NASA",
+        "APOD",
+        "images",
+        "science",
+        "education"
+      ],
+      "schema:availableChannel": {
+        "@type": "schema:ServiceChannel",
+        "schema:serviceUrl": "https://api.nasa.gov/planetary/apod",
+        "schema:availableLanguage": "en"
+      }
+    }
+  ]
+}

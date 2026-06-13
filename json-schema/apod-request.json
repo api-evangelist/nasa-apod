@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nasa-apod/main/json-schema/apod-request.json",
+  "title": "APOD Request Parameters",
+  "description": "Query parameters accepted by the NASA APOD GET /planetary/apod endpoint",
+  "type": "object",
+  "properties": {
+    "api_key": {
+      "type": "string",
+      "description": "NASA API key. Use DEMO_KEY for limited testing.",
+      "default": "DEMO_KEY",
+      "example": "DEMO_KEY"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "A string in YYYY-MM-DD format indicating the date of the APOD image. Defaults to today. Must be after 1995-06-16. Cannot be used with count, start_date, or end_date.",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "example": "2014-10-01"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "A string in YYYY-MM-DD format indicating the start of a date range. Cannot be used with date or count.",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "example": "2017-07-08"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "A string in YYYY-MM-DD format indicating the end of a date range. Defaults to current date if start_date is specified without end_date. Cannot be used with date or count.",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "example": "2017-07-10"
+    },
+    "count": {
+      "type": "integer",
+      "description": "A positive integer, no greater than 100. Returns randomly chosen images. Cannot be used with date, start_date, or end_date.",
+      "minimum": 1,
+      "maximum": 100,
+      "example": 5
+    },
+    "concept_tags": {
+      "type": "boolean",
+      "description": "A boolean True|False indicating whether concept tags should be returned. Defaults to False.",
+      "default": false
+    },
+    "hd": {
+      "type": "boolean",
+      "description": "Legacy parameter. Present for legacy purposes only — always ignored by the service.",
+      "default": false
+    },
+    "thumbs": {
+      "type": "boolean",
+      "description": "A boolean True|False indicating whether the API should return a thumbnail image URL for video files. Ignored for non-video APOD entries.",
+      "default": false
+    }
+  },
+  "not": {
+    "anyOf": [
+      {
+        "required": ["date", "count"],
+        "description": "Cannot combine date with count"
+      },
+      {
+        "required": ["start_date", "count"],
+        "description": "Cannot combine start_date with count"
+      },
+      {
+        "required": ["date", "start_date"],
+        "description": "Cannot combine date with start_date"
+      }
+    ]
+  }
+}

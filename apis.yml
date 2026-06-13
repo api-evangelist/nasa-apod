@@ -43,7 +43,7 @@ apis:
       - type: Documentation
         url: https://github.com/nasa/apod-api
       - type: OpenAPI
-        url: https://api.nasa.gov/assets/json/apis.json
+        url: https://raw.githubusercontent.com/api-evangelist/nasa-apod/refs/heads/main/openapi/openapi.yml
     contact:
       - FN: NASA API Support
         url: https://api.nasa.gov/
