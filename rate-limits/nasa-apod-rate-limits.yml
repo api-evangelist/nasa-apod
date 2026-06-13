@@ -1,0 +1,44 @@
+name: NASA APOD Rate Limits
+description: Rate limiting details for the NASA Astronomy Picture of the Day API.
+url: https://api.nasa.gov/assets/html/authentication.html
+
+limits:
+
+  - plan: DEMO_KEY
+    type: hourly
+    requests: 30
+    period: hour
+    scope: IP address
+    notes: >
+      The DEMO_KEY is shared across all unauthenticated users. Limits are
+      applied per IP address rather than per key.
+
+  - plan: DEMO_KEY
+    type: daily
+    requests: 50
+    period: day
+    scope: IP address
+    notes: >
+      Daily ceiling for DEMO_KEY access, enforced per originating IP address.
+
+  - plan: Registered Free
+    type: hourly
+    requests: 1000
+    period: hour
+    scope: API key
+    notes: >
+      Limits apply across all api.nasa.gov API calls made with the same
+      registered key, not solely APOD requests.
+
+enforcement:
+  description: >
+    Exceeding rate limits results in a temporary block on the API key or IP
+    address. Blocks are lifted automatically on a rolling hourly basis.
+  headers:
+    - X-RateLimit-Limit
+    - X-RateLimit-Remaining
+  block_duration: 1 hour (rolling)
+
+contact:
+  description: Organizations requiring higher limits may contact NASA.
+  url: https://api.nasa.gov/

@@ -1,0 +1,51 @@
+name: NASA APOD Plans and Pricing
+description: Pricing and access plans for the NASA Astronomy Picture of the Day API.
+url: https://api.nasa.gov/
+plans:
+
+  - name: DEMO_KEY
+    description: >
+      No-signup demo access using the shared DEMO_KEY for quick exploration of
+      the API. Suitable for testing and development only.
+    url: https://api.nasa.gov/
+    free: true
+    rateLimit:
+      requests: 30
+      period: hour
+      unit: IP address
+    dailyLimit:
+      requests: 50
+      period: day
+      unit: IP address
+    features:
+      - Access to APOD endpoint
+      - No registration required
+      - Shared key across all demo users
+
+  - name: Registered Free
+    description: >
+      Free API key obtained by registering at api.nasa.gov. Provides
+      significantly higher rate limits suitable for most application use cases.
+    url: https://api.nasa.gov/#signUp
+    free: true
+    rateLimit:
+      requests: 1000
+      period: hour
+      unit: API key
+    features:
+      - Access to all NASA Open APIs including APOD
+      - 1,000 requests per hour per API key
+      - Rolling hourly counter reset
+      - HTTP response headers for usage monitoring
+      - No cost
+
+  - name: Higher Limits
+    description: >
+      Custom rate limit arrangements available by contacting NASA directly for
+      applications requiring throughput beyond the standard 1,000 requests per hour.
+    url: https://api.nasa.gov/
+    free: true
+    custom: true
+    features:
+      - Negotiated limits based on use case
+      - Contact NASA for availability

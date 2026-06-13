@@ -1,0 +1,44 @@
+name: NASA APOD FinOps
+description: >
+  Financial operations guidance for the NASA Astronomy Picture of the Day API.
+  The API is a free public service operated by NASA; there are no direct
+  monetary costs for consumers.
+url: https://api.nasa.gov/
+
+cost:
+  model: free
+  currency: USD
+  notes: >
+    The NASA APOD API is provided at no charge as a public government service.
+    There are no subscription fees, per-request charges, or overage fees.
+
+considerations:
+
+  - category: Registration
+    description: >
+      Obtaining a registered API key is free and requires only an email address
+      at api.nasa.gov. The key unlocks the standard 1,000 req/hour tier.
+
+  - category: Infrastructure (self-hosted)
+    description: >
+      The APOD API source code is open source (github.com/nasa/apod-api).
+      Teams requiring guaranteed uptime or higher throughput can host their own
+      instance; cloud hosting costs (compute, storage, egress) would then apply.
+
+  - category: Image Storage and Delivery
+    description: >
+      APOD responses include URLs pointing to NASA-hosted images (JPEG, PNG).
+      If an application caches or re-serves these images, consumer egress and
+      storage costs may arise on the hosting platform.
+
+  - category: Third-Party Wrappers
+    description: >
+      Several commercial API management platforms wrap the NASA APOD API and may
+      impose their own pricing. Always verify whether a wrapper or the official
+      endpoint is being used.
+
+optimization:
+  - tip: Use date range queries to batch-fetch multiple APODs in a single request instead of making individual daily calls.
+  - tip: Cache responses locally; APOD content is static once published.
+  - tip: Register for a free API key to avoid DEMO_KEY limits and reduce the risk of throttling in production.
+  - tip: Monitor X-RateLimit-Remaining response headers to avoid hitting the hourly ceiling.
