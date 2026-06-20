@@ -6,7 +6,7 @@ description: >
   specific date, date ranges, and random selection, with high-definition image
   URLs, media type detection, and optional concept tags derived from image
   metadata. Data is available from 1995-06-16 onward.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/nasa-apod/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -30,7 +30,7 @@ apis:
       title, explanation, image URL, HD image URL, media type, copyright, and
       optional concept tags. Supports date-based filtering and random image
       selection.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://api.nasa.gov/
     baseURL: https://api.nasa.gov
     tags:
