@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: ApiKeyQuery
+  type: apiKey
+  in: query
+  parameter: api_key
+  description: NASA API key. Register for a free key at https://api.nasa.gov/#signUp. Use DEMO_KEY
+    for testing (rate limits apply).
+  sources:
+  - openapi/openapi.yml

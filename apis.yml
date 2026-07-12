@@ -50,6 +50,10 @@ apis:
 
 common:
 
+  - type: DomainSecurity
+    url: security/nasa-apod-domain-security.yml
+  - type: Authentication
+    url: authentication/nasa-apod-authentication.yml
   - type: Website
     url: https://api.nasa.gov/
 
