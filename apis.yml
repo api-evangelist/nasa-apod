@@ -50,6 +50,8 @@ apis:
 
 common:
 
+  - type: AgenticAccess
+    url: agentic-access/nasa-apod-agentic-access.yml
   - type: DomainSecurity
     url: security/nasa-apod-domain-security.yml
   - type: Authentication
