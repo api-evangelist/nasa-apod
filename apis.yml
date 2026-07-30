@@ -6,7 +6,20 @@ description: >
   specific date, date ranges, and random selection, with high-definition image
   URLs, media type detection, and optional concept tags derived from image
   metadata. Data is available from 1995-06-16 onward.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/nasa-apod.png
 url: https://raw.githubusercontent.com/api-evangelist/nasa-apod/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -22,32 +35,18 @@ tags:
   - Open Data
 
 apis:
-
-  - aid: nasa-apod:nasa-apod
-    name: NASA APOD API
-    description: >
-      Single-endpoint REST API returning the Astronomy Picture of the Day with
-      title, explanation, image URL, HD image URL, media type, copyright, and
-      optional concept tags. Supports date-based filtering and random image
-      selection.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://api.nasa.gov/
-    baseURL: https://api.nasa.gov
-    tags:
-      - NASA
-      - Astronomy
-      - Space
-      - Images
-      - APOD
-    properties:
-      - type: Documentation
-        url: https://github.com/nasa/apod-api
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/nasa-apod/refs/heads/main/openapi/openapi.yml
-    contact:
-      - FN: NASA API Support
-        url: https://api.nasa.gov/
-
+- aid: nasa-apod:nasa-apod-apod-api
+  name: NASA APOD APOD API
+  description: Astronomy Picture of the Day endpoints
+  humanURL: https://api.nasa.gov/
+  baseURL: https://api.nasa.gov
+  tags:
+  - APOD
+  properties:
+  - type: OpenAPI
+    url: openapi/nasa-apod-apod-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/nasa/apod-api
 common:
 
   - type: AgenticAccess
