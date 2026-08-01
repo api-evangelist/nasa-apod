@@ -1,0 +1,14 @@
+{
+  "provider": "nasa-apod",
+  "sources": [
+    "nasa-apod-apod-api-openapi.yml"
+  ],
+  "outputs": [
+    "nasa-apod-apod-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
