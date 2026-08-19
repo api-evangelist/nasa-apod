@@ -1,0 +1,421 @@
+{
+  "item": [
+    {
+      "id": "b3bb97ce-7dcd-4e89-b1f1-4b3317051f36",
+      "name": "APOD",
+      "description": {
+        "content": "Astronomy Picture of the Day endpoints",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e47210b9-cce1-490f-838f-43c5d56c9a3c",
+          "name": "Get Astronomy Picture of the Day",
+          "request": {
+            "name": "Get Astronomy Picture of the Day",
+            "description": {
+              "content": "Returns the Astronomy Picture of the Day with title, explanation, image URL, HD image URL, media type, copyright, and optional concept tags. Supports date-based filtering, date-range queries, and random image selection. Cannot combine count with date or start_date/end_date.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apod"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "DEMO_KEY",
+                  "description": "api.nasa.gov key for expanded usage. Use DEMO_KEY for limited testing (30 requests/hour, 50 requests/day).\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<date>",
+                  "description": "A string in YYYY-MM-DD format indicating the date of the APOD image. Defaults to today's date. Must be after 1995-06-16, the first day an APOD picture was posted. Cannot be used with count, start_date, or end_date.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "start_date",
+                  "value": "<date>",
+                  "description": "A string in YYYY-MM-DD format indicating the start of a date range. All images in the range from start_date to end_date will be returned in a JSON array. Cannot be used with date or count.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "end_date",
+                  "value": "<date>",
+                  "description": "A string in YYYY-MM-DD format indicating the end of a date range. If start_date is specified without an end_date then end_date defaults to the current date. Cannot be used with date or count.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "count",
+                  "value": "<integer>",
+                  "description": "A positive integer, no greater than 100. If specified then count randomly chosen images will be returned in a JSON array. Cannot be used in conjunction with date, start_date, or end_date.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "concept_tags",
+                  "value": "false",
+                  "description": "A boolean True|False indicating whether concept tags should be returned with the rest of the response. Concept tags are derived from common search tags associated with the description text. Defaults to False. Note: concept_tags functionality may be disabled in the current service deployment.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "hd",
+                  "value": "false",
+                  "description": "A boolean True|False parameter indicating whether or not high-resolution images should be returned. Present for legacy purposes only — it is always ignored by the service and high-resolution URLs are returned regardless.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "thumbs",
+                  "value": "false",
+                  "description": "A boolean parameter True|False indicating whether the API should return a thumbnail image URL for video files. If set to True, the API returns URL of video thumbnail. If an APOD is not a video, this parameter is ignored.\n"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2fdd126-f843-404c-b01b-550a9bed7e05",
+              "name": "Successful response. Returns a single APOD object when querying by date (or defaulting to today), or a JSON array of APOD objects when using count, start_date/end_date.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apod"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "DEMO_KEY"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2014-10-01"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "2017-07-08"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "2017-07-10"
+                    },
+                    {
+                      "key": "count",
+                      "value": "5"
+                    },
+                    {
+                      "key": "concept_tags",
+                      "value": "false"
+                    },
+                    {
+                      "key": "hd",
+                      "value": "false"
+                    },
+                    {
+                      "key": "thumbs",
+                      "value": "false"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"date\": \"2014-10-01\",\n  \"title\": \"Filaments of the Vela Supernova Remnant\",\n  \"explanation\": \"The explosion is over but the consequences continue. About eleven thousand years ago a star in the constellation of Vela could be seen to explode, creating a strange point of light briefly visible to humans living near the beginning of recorded history.\\n\",\n  \"url\": \"https://apod.nasa.gov/apod/image/1310/velafilaments_jadescope_960.jpg\",\n  \"hdurl\": \"https://apod.nasa.gov/apod/image/1310/velafilaments_jadescope_2000.jpg\",\n  \"media_type\": \"image\",\n  \"service_version\": \"v1\",\n  \"concept_tags\": \"True\",\n  \"concepts\": {\n    \"0\": \"Astronomy\",\n    \"1\": \"Star\",\n    \"2\": \"Sun\",\n    \"3\": \"Milky Way\",\n    \"4\": \"Hubble Space Telescope\",\n    \"5\": \"Earth\",\n    \"6\": \"Nebula\",\n    \"7\": \"Interstellar medium\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "98f49113-d977-4725-9004-d319c4f7a9bb",
+              "name": "Bad request — invalid parameters or parameter combination",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apod"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "DEMO_KEY"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2014-10-01"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "2017-07-08"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "2017-07-10"
+                    },
+                    {
+                      "key": "count",
+                      "value": "5"
+                    },
+                    {
+                      "key": "concept_tags",
+                      "value": "false"
+                    },
+                    {
+                      "key": "hd",
+                      "value": "false"
+                    },
+                    {
+                      "key": "thumbs",
+                      "value": "false"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"msg\": \"Date must be between Jun 16, 1995 and today.\",\n  \"code\": 400,\n  \"service_version\": \"v1\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dff82b08-591c-46ff-9845-f8f490218346",
+              "name": "No data available for the requested date",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apod"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "DEMO_KEY"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2014-10-01"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "2017-07-08"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "2017-07-10"
+                    },
+                    {
+                      "key": "count",
+                      "value": "5"
+                    },
+                    {
+                      "key": "concept_tags",
+                      "value": "false"
+                    },
+                    {
+                      "key": "hd",
+                      "value": "false"
+                    },
+                    {
+                      "key": "thumbs",
+                      "value": "false"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"msg\": \"No data available for date: 2020-01-01\",\n  \"code\": 404,\n  \"service_version\": \"v1\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2caf94c5-e6ab-446b-a4c9-7ce4c5fc3f89",
+              "name": "Internal service error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apod"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "DEMO_KEY"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2014-10-01"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "2017-07-08"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "2017-07-10"
+                    },
+                    {
+                      "key": "count",
+                      "value": "5"
+                    },
+                    {
+                      "key": "concept_tags",
+                      "value": "false"
+                    },
+                    {
+                      "key": "hd",
+                      "value": "false"
+                    },
+                    {
+                      "key": "thumbs",
+                      "value": "false"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"msg\": \"Bad Request: incorrect field passed.\",\n  \"code\": 400,\n  \"service_version\": \"v1\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nasa.gov/planetary",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8f751066-356a-43b4-a1aa-ff182d5ac4c8",
+    "name": "NASA Astronomy Picture of the Day () APOD API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "NASA Astronomy Picture of the Day (APOD) REST API providing daily astronomy images and explanations curated by NASA scientists. Supports retrieval by specific date, date ranges, and random selection, with high-definition image URLs, media type detection, and optional concept tags derived from image metadata. Data is available from 1995-06-16 onward.\n\n\nContact Support:\n Name: NASA API Support",
+      "type": "text/plain"
+    }
+  }
+}
