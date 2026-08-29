@@ -6,6 +6,18 @@ description: >
   specific date, date ranges, and random selection, with high-definition image
   URLs, media type detection, and optional concept tags derived from image
   metadata. Data is available from 1995-06-16 onward.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-serve
