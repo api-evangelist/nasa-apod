@@ -1,11 +1,11 @@
 aid: nasa-apod
 name: NASA APOD
-description: >
-  NASA Astronomy Picture of the Day (APOD) REST API providing daily astronomy
-  images and explanations curated by NASA scientists. Supports retrieval by
-  specific date, date ranges, and random selection, with high-definition image
-  URLs, media type detection, and optional concept tags derived from image
+description: 'NASA Astronomy Picture of the Day (APOD) REST API providing daily astronomy images and explanations
+  curated by NASA scientists. Supports retrieval by specific date, date ranges, and random selection,
+  with high-definition image URLs, media type detection, and optional concept tags derived from image
   metadata. Data is available from 1995-06-16 onward.
+
+  '
 deliveryModel:
   model: saas
   open_source: false
@@ -35,29 +35,28 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/nasa-apod.png
 url: https://raw.githubusercontent.com/api-evangelist/nasa-apod/refs/heads/main/apis.yml
 created: '2026-06-13'
-modified: '2026-06-13'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 type: Index
 tags:
-  - NASA
-  - Astronomy
-  - Space
-  - Image
-  - Science
-  - Education
-  - Open Data
+- NASA
+- Astronomy
+- Space
+- Image
+- Science
+- Education
+- Open Data
 tags_raw:
-  - NASA
-  - Astronomy
-  - Space
-  - Images
-  - Science
-  - Education
-  - Open Data
-
+- NASA
+- Astronomy
+- Space
+- Images
+- Science
+- Education
+- Open Data
 apis:
 - aid: nasa-apod:nasa-apod-apod-api
-  name: NASA APOD APOD API
+  name: NASA APOD API
   description: Astronomy Picture of the Day endpoints
   humanURL: https://api.nasa.gov/
   baseURL: https://api.nasa.gov
@@ -69,45 +68,34 @@ apis:
   - type: Documentation
     url: https://github.com/nasa/apod-api
 common:
-
-  - type: AgenticAccess
-    url: agentic-access/nasa-apod-agentic-access.yml
-  - type: DomainSecurity
-    url: security/nasa-apod-domain-security.yml
-  - type: Authentication
-    url: authentication/nasa-apod-authentication.yml
-  - type: Website
-    url: https://api.nasa.gov/
-
-  - type: Documentation
-    url: https://github.com/nasa/apod-api
-
-  - type: GitHubOrg
-    url: https://github.com/nasa
-
-  - type: Blog
-    url: https://apod.nasa.gov/apod/
-
-  - type: Pricing
-    url: https://api.nasa.gov/
-
-  - type: StatusPage
-    url: https://status.api.nasa.gov/
-
-  - type: X
-    url: https://x.com/apod
-
-  - type: Plans
-    url: plans/nasa-apod-plans-pricing.yml
-
-  - type: RateLimits
-    url: rate-limits/nasa-apod-rate-limits.yml
-
-  - type: FinOps
-    url: finops/nasa-apod-finops.yml
-
+- type: AgenticAccess
+  url: agentic-access/nasa-apod-agentic-access.yml
+- type: DomainSecurity
+  url: security/nasa-apod-domain-security.yml
+- type: Authentication
+  url: authentication/nasa-apod-authentication.yml
+- type: Website
+  url: https://api.nasa.gov/
+- type: Documentation
+  url: https://github.com/nasa/apod-api
+- type: GitHubOrg
+  url: https://github.com/nasa
+- type: Blog
+  url: https://apod.nasa.gov/apod/
+- type: Pricing
+  url: https://api.nasa.gov/
+- type: StatusPage
+  url: https://status.api.nasa.gov/
+- type: X
+  url: https://x.com/apod
+- type: Plans
+  url: plans/nasa-apod-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/nasa-apod-rate-limits.yml
+- type: FinOps
+  url: finops/nasa-apod-finops.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
 x-parent: nasa
 x-relationship: product
