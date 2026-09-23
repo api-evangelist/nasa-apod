@@ -1,0 +1,23 @@
+# Front Door AI Index — nasa-apod — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: nasa-apod
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: api.nasa.gov
+  final_host: api.nasa.gov
+  ownership: unresolved
+  owner: null
+  shares_host_with:
+  - nasa-mars
+  - nasa-neows
+  inherited_from: null
+  verdict: thin
+  score: null
+  host_score: null
+  density: null
+  words: 9
+  tiers: null
+  ambiguous: null
+  top_terms: null

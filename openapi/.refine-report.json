@@ -1,7 +1,7 @@
 {
   "provider": "nasa-apod",
   "sources": [
-    "nasa-apod-apod-api-openapi.yml"
+    "_original/openapi.yml"
   ],
   "outputs": [
     "nasa-apod-apod-api-openapi.yml"
@@ -10,8 +10,11 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "nasa-apod-apod-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "nasa-apod-apod-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
